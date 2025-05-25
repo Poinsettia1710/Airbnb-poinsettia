@@ -4,88 +4,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Oasis at Poinsettia Ave</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
+<style>
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom right, #1c2b4a, #34465d);
+    color: #f5f7fa;
+  }
+
+  header {
+    background-color: #0a1f3c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: 600;
+  }
+
+  #welcome {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.5em;
+    animation: fadeOut 2s ease-in-out 3s forwards;
+  }
+
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      visibility: hidden;
+      height: 0;
+      padding: 0;
       margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(to bottom right, #f2f6fc, #dbe9f4);
-      color: #333;
     }
+  }
 
-    header {
-      background-color: #006666;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.8em;
-      font-weight: 600;
-    }
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 40px 20px;
+    animation: fadeIn 1s ease-in-out forwards;
+  }
 
-    #welcome {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 1.5em;
-      animation: fadeOut 2s ease-in-out 3s forwards;
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
-    @keyframes fadeOut {
-      to {
-        opacity: 0;
-        visibility: hidden;
-        height: 0;
-        padding: 0;
-        margin: 0;
-      }
-    }
+  .menu a {
+    background-color: #1e2e49;
+    padding: 15px 25px;
+    width: 80%;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
 
-    .menu {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 40px 20px;
-      animation: fadeIn 1s ease-in-out forwards;
-    }
+  .menu a:hover {
+    background-color: #2c3e5e;
+    transform: scale(1.05);
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+  .section {
+    display: none;
+    padding: 20px;
+  }
 
-    .menu a {
-      background-color: white;
-      padding: 15px 25px;
-      width: 80%;
-      text-align: center;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #006666;
-      font-weight: 600;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, background-color 0.3s ease;
-    }
-
-    .menu a:hover {
-      background-color: #e0f7f7;
-      transform: scale(1.05);
-    }
-
-    .section {
-      display: none;
-      padding: 20px;
-    }
-
-    .back-btn {
-      display: block;
-      margin: 20px auto;
-      text-align: center;
-      background: #006666;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
-  </style>
+  .back-btn {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    background: #0a1f3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+</style>
 </head>
 <body>
 
