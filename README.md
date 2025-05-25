@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Welcome Danna</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome, Danna</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #1e90ff;
+      --accent: #00c6ff;
+      --bg-start: #0f2027;
+      --bg-end: #203a43;
+      --text-light: #f0f0f0;
+      --card-bg: rgba(255, 255, 255, 0.05);
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background: #fefefe;
-      color: #333;
-      text-align: center;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, var(--bg-start), var(--bg-end));
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     .welcome {
-      font-size: 2em;
-      margin-top: 40vh;
-      animation: fadeOut 2s forwards;
+      font-size: 2.5rem;
+      margin-top: 30vh;
+      text-align: center;
+      animation: fadeOut 1s ease-in-out forwards;
       animation-delay: 3s;
     }
 
@@ -25,25 +39,58 @@
       display: none;
       flex-direction: column;
       align-items: center;
-      gap: 1em;
-      margin-top: 20vh;
+      margin-top: 10vh;
+      width: 100%;
+      max-width: 600px;
+      padding: 0 1em;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .menu a {
-      display: block;
-      width: 80%;
-      max-width: 300px;
-      background: #003366;
-      color: white;
-      padding: 1em;
+      background: var(--card-bg);
+      color: var(--text-light);
       text-decoration: none;
-      border-radius: 8px;
-      font-size: 1.1em;
+      padding: 1em;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      margin-bottom: 1em;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .menu a:hover {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
     }
 
     .tab {
-      padding: 2em;
       display: none;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(8px);
+      margin-top: 2em;
+      padding: 2em;
+      border-radius: 15px;
+      width: 90%;
+      max-width: 700px;
+      animation: fadeInTab 0.5s ease;
+    }
+
+    h2 {
+      color: var(--accent);
+      margin-bottom: 0.5em;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      padding: 0.3em 0;
     }
 
     @keyframes fadeOut {
@@ -51,6 +98,33 @@
         opacity: 0;
         visibility: hidden;
       }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInTab {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    a.button-link {
+      color: var(--accent);
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -60,60 +134,62 @@
 
   <div id="menu" class="menu">
     <a href="#house-rules">🏡 House Rules</a>
-    <a href="#address">📍 House Address & Directions</a>
-    <a href="#attractions">🌟 Nearby Attractions</a>
+    <a href="#address">📍 Address & Directions</a>
+    <a href="#attractions">🌟 Attractions</a>
     <a href="#restaurants">🍽️ Restaurants</a>
     <a href="#wifi">📶 Wi-Fi Info</a>
   </div>
 
   <div id="house-rules" class="tab">
     <h2>House Rules</h2>
-    <p>No smoking, no pets, and please be respectful of neighbors.</p>
+    <p>Please treat the home with respect. No smoking. No parties. Quiet hours after 10PM.</p>
   </div>
 
   <div id="address" class="tab">
     <h2>House Address & Directions</h2>
-    <p>123 Main St, Your City, ST 12345</p>
-    <p><a href="https://maps.google.com/?q=123 Main St" target="_blank">Get Directions</a></p>
+    <p>123 Poinsettia Lane, Sunny City, ST 45678</p>
+    <p><a class="button-link" href="https://maps.google.com/?q=123 Poinsettia Lane" target="_blank">Open in Maps</a></p>
   </div>
 
   <div id="attractions" class="tab">
     <h2>Nearby Attractions</h2>
     <ul>
-      <li>City Museum – 5 min drive</li>
-      <li>Central Park – 10 min walk</li>
+      <li>🌳 Poinsettia Park – 8 min walk</li>
+      <li>🏖️ Sunny Beach – 12 min drive</li>
+      <li>🛍️ Downtown Market – 10 min walk</li>
     </ul>
   </div>
 
   <div id="restaurants" class="tab">
-    <h2>Nearby Restaurants</h2>
+    <h2>Recommended Restaurants</h2>
     <ul>
-      <li>La Casa – Mexican Grill</li>
-      <li>Joe’s Pizza – Best in town!</li>
+      <li>🍕 Pizzeria Luca – Wood-fired pizza</li>
+      <li>🍣 Sora Sushi – Modern Japanese</li>
+      <li>🥗 Verde – Healthy eats and smoothies</li>
     </ul>
   </div>
 
   <div id="wifi" class="tab">
-    <h2>Wi-Fi Info</h2>
-    <p>Network: WelcomeHome</p>
-    <p>Password: enjoyyourstay123</p>
+    <h2>Wi-Fi Information</h2>
+    <p><strong>Network:</strong> Poinsettia_Guest</p>
+    <p><strong>Password:</strong> welcomehome2024</p>
   </div>
 
   <script>
-    // After 3.5 seconds, hide welcome and show menu
+    // Welcome transition
     setTimeout(() => {
       document.getElementById("welcome").style.display = "none";
       document.getElementById("menu").style.display = "flex";
     }, 3500);
 
-    // Show tab content when linked
+    // Tab transitions
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelectorAll('.tab').forEach(tab => tab.style.display = 'none');
         const target = this.getAttribute('href');
         document.querySelector(target).style.display = 'block';
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   </script>
